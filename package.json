@@ -14,11 +14,16 @@
     "@astrojs/react": "^3.0.5",
     "@astrojs/tailwind": "^5.0.2",
     "@astrojs/vercel": "^5.2.0",
+    "@nextui-org/react": "^2.2.9",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "astro": "^3.5.5",
+    "astro-icon": "^0.8.1",
+    "atropos": "^2.0.2",
+    "framer-motion": "^10.16.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0",
     "tailwindcss": "^3.3.5"
   },
   "devDependencies": {
