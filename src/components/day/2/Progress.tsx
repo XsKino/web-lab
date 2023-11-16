@@ -1,27 +1,35 @@
 import React, { useState } from 'react'
 import { TbPlayerTrackNextFilled } from 'react-icons/tb'
-import { HiFire, HiEye, HiMusicNote, HiPuzzle, HiStar, HiHeart, HiCube } from 'react-icons/hi'
+import {
+  Bs1CircleFill,
+  Bs2CircleFill,
+  Bs3CircleFill,
+  Bs4CircleFill,
+  Bs5CircleFill,
+  Bs6CircleFill,
+  Bs7CircleFill
+} from 'react-icons/bs'
 const steps = [
   {
-    icon: <HiFire />
+    icon: <Bs1CircleFill />
   },
   {
-    icon: <HiEye />
+    icon: <Bs2CircleFill />
   },
   {
-    icon: <HiMusicNote />
+    icon: <Bs3CircleFill />
   },
   {
-    icon: <HiPuzzle />
+    icon: <Bs4CircleFill />
   },
   {
-    icon: <HiStar />
+    icon: <Bs5CircleFill />
   },
   {
-    icon: <HiHeart />
+    icon: <Bs6CircleFill />
   },
   {
-    icon: <HiCube />
+    icon: <Bs7CircleFill />
   }
 ]
 
