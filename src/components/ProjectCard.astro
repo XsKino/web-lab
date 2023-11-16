@@ -1,0 +1,66 @@
+---
+import Atropos from 'atropos/react'
+
+interface project {
+  day: number
+  title: string
+  image: string
+  href: string
+}
+
+interface Props {
+  project: project
+}
+
+const { project } = Astro.props
+const { day, title, image, href } = project
+---
+
+<Atropos transition:name=`day-${day}` rotateTouch={false} client:only='react' className='my-atropos'>
+  <a class='w-full h-full grid place-items-center p-4 overflow-hidden' href={href}>
+    <img class='w-full h-full object-cover' src={image} alt={title} />
+    <div class='absolute cover grid place-items-center overflow-hidden h-full w-full'>
+      <div class='relative w-full h-full grid place-items-center'>
+        <h1 class='text-3xl absolute day-label'>Day {day}</h1>
+        <h1 class='text-lg md:text-2xl lg:text-3xl absolute title-label bottom-4'>{title}</h1>
+      </div>
+    </div>
+  </a>
+</Atropos>
+
+<style>
+  .day-label,
+  .title-label {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .title-label {
+    transform: translateY(200%);
+  }
+
+  .cover {
+    background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.6783088235294117) 2%,
+      rgba(0, 0, 0, 0.01724439775910369) 100%
+    );
+  }
+
+  .cover:hover {
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.6334908963585435) 0%,
+      rgba(0, 0, 0, 0) 44%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  .cover:hover .day-label {
+    transform: translateY(-200%);
+    opacity: 0;
+  }
+
+  .cover:hover .title-label {
+    transform: translateY(0%);
+  }
+</style>
