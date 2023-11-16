@@ -1,35 +1,35 @@
 import React, { useState } from 'react'
 import { TbPlayerTrackNextFilled } from 'react-icons/tb'
 import {
-  Bs1CircleFill,
-  Bs2CircleFill,
-  Bs3CircleFill,
-  Bs4CircleFill,
-  Bs5CircleFill,
-  Bs6CircleFill,
-  Bs7CircleFill
-} from 'react-icons/bs'
+  AiFillExperiment,
+  AiFillEnvironment,
+  AiFillStar,
+  AiFillFire,
+  AiFillEye,
+  AiFillHeart,
+  AiFillRocket
+} from 'react-icons/ai'
 const steps = [
   {
-    icon: <Bs1CircleFill />
+    icon: <AiFillExperiment />
   },
   {
-    icon: <Bs2CircleFill />
+    icon: <AiFillEnvironment />
   },
   {
-    icon: <Bs3CircleFill />
+    icon: <AiFillStar />
   },
   {
-    icon: <Bs4CircleFill />
+    icon: <AiFillFire />
   },
   {
-    icon: <Bs5CircleFill />
+    icon: <AiFillEye />
   },
   {
-    icon: <Bs6CircleFill />
+    icon: <AiFillHeart />
   },
   {
-    icon: <Bs7CircleFill />
+    icon: <AiFillRocket />
   }
 ]
 
