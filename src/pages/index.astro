@@ -1,7 +1,7 @@
 ---
 import Body from '@layouts/Body.astro'
 import NavBar from '@components/NavBar.astro'
-import ProjectCard from '@components/ProjectCard.astro'
+import ProjectCard from '@/src/components/ProjectCard.tsx'
 import { Icon } from 'astro-icon'
 
 interface project {
@@ -23,67 +23,67 @@ const projects: project[] = [
     title: 'Progress Steps',
     image: '/img/day/2/thumbnail.jpg',
     href: '/day/2'
+  },
+  {
+    day: 3,
+    title: 'Rotating Navigation',
+    image: '/img/day/3/thumbnail.jpg',
+    href: '/day/3'
+  },
+  {
+    day: 4,
+    title: 'Hidden Search',
+    image: '/img/day/4/thumbnail.jpg',
+    href: '/day/4'
+  },
+  {
+    day: 5,
+    title: 'Blurry Loading',
+    image: '/img/day/5/thumbnail.jpg',
+    href: '/day/5'
+  },
+  {
+    day: 6,
+    title: 'Scroll Animation',
+    image: '/img/day/6/thumbnail.jpg',
+    href: '/day/6'
+  },
+  {
+    day: 7,
+    title: 'Split Landing Page',
+    image: '/img/day/7/thumbnail.jpg',
+    href: '/day/7'
+  },
+  {
+    day: 8,
+    title: 'Form Wave Animation',
+    image: '/img/day/8/thumbnail.jpg',
+    href: '/day/8'
+  },
+  {
+    day: 9,
+    title: 'Sound Board',
+    image: '/img/day/9/thumbnail.jpg',
+    href: '/day/9'
+  },
+  {
+    day: 10,
+    title: 'Dad Jokes',
+    image: '/img/day/10/thumbnail.jpg',
+    href: '/day/10'
+  },
+  {
+    day: 11,
+    title: 'Event Keycodes',
+    image: '/img/day/11/thumbnail.jpg',
+    href: '/day/11'
+  },
+  {
+    day: 12,
+    title: 'FAQ Collapse',
+    image: '/img/day/12/thumbnail.jpg',
+    href: '/day/12'
   }
-  // {
-  //   day: 3,
-  //   title: 'Rotating Navigation',
-  //   image: '/img/day/3/thumbnail.jpg',
-  //   href: '/day/3'
-  // },
-  // {
-  //   day: 4,
-  //   title: 'Hidden Search',
-  //   image: '/img/day/4/thumbnail.jpg',
-  //   href: '/day/4'
-  // },
-  // {
-  //   day: 5,
-  //   title: 'Blurry Loading',
-  //   image: '/img/day/5/thumbnail.jpg',
-  //   href: '/day/5'
-  // },
-  // {
-  //   day: 6,
-  //   title: 'Scroll Animation',
-  //   image: '/img/day/6/thumbnail.jpg',
-  //   href: '/day/6'
-  // },
-  // {
-  //   day: 7,
-  //   title: 'Split Landing Page',
-  //   image: '/img/day/7/thumbnail.jpg',
-  //   href: '/day/7'
-  // },
-  // {
-  //   day: 8,
-  //   title: 'Form Wave Animation',
-  //   image: '/img/day/8/thumbnail.jpg',
-  //   href: '/day/8'
-  // },
-  // {
-  //   day: 9,
-  //   title: 'Sound Board',
-  //   image: '/img/day/9/thumbnail.jpg',
-  //   href: '/day/9'
-  // },
-  // {
-  //   day: 10,
-  //   title: 'Dad Jokes',
-  //   image: '/img/day/10/thumbnail.jpg',
-  //   href: '/day/10'
-  // },
-  // {
-  //   day: 11,
-  //   title: 'Event Keycodes',
-  //   image: '/img/day/11/thumbnail.jpg',
-  //   href: '/day/11'
-  // },
-  // {
-  //   day: 12,
-  //   title: 'FAQ Collapse',
-  //   image: '/img/day/12/thumbnail.jpg',
-  //   href: '/day/12'
-  // }
 ]
 ---
 
@@ -99,7 +99,7 @@ const projects: project[] = [
         Projects
       </h1>
       <section id='project-grid' class='grid p-4 gap-4'>
-        {projects.map(project => <ProjectCard project={project} />)}
+        {projects.map(project => <ProjectCard client:only="react" day={project.day} title={project.title}, image={project.image}, href={project.href} />)}
       </section>
     </div>
   </main>
