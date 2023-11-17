@@ -184,7 +184,7 @@ export default function Progress(): JSX.Element {
             }}
             key={`step-${index}`}
             id={`step-${index}`}
-            className='absolute step aspect-square h-[25vmin] rounded-full grid place-items-center transition-all'
+            className='tap-highlight-transparent absolute step aspect-square h-[25vmin] rounded-full grid place-items-center transition-all'
             style={{
               transform: `rotate(${angle}deg) translateY(-30.7692vmin) rotate(calc(0deg - ${angle}deg))`
             }}>
@@ -207,7 +207,7 @@ export default function Progress(): JSX.Element {
 
       <button
         onClick={addOne}
-        className='z-10 aspect-square h-20 rounded-full flex items-center justify-center text-black/30 text-4xl'
+        className='z-10 tap-highlight-transparent aspect-square h-20 rounded-full flex items-center justify-center text-black/30 text-4xl'
         style={{
           boxShadow:
             'inset -0.2rem 0.2rem 5px #00000022, inset 0.2rem -0.2rem 5px #ffffff12, -0.2rem 0.2rem 15px #00000062, 0.2rem -0.2rem 15px #ffffff12'
