@@ -99,7 +99,7 @@ const projects: project[] = [
         Projects
       </h1>
       <section id='project-grid' class='grid p-4 gap-4'>
-        {projects.map(project => <ProjectCard client:only="react" day={project.day} title={project.title}, image={project.image}, href={project.href} />)}
+        {projects.map(project => <ProjectCard transition:name={`day-${project.day}`} client:only="react" day={project.day} title={project.title}, image={project.image}, href={project.href} />)}
       </section>
     </div>
   </main>
