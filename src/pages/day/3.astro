@@ -1,0 +1,100 @@
+---
+import Body from '@layouts/Body.astro'
+import { Icon } from 'astro-icon'
+---
+
+<script>
+  const toggle = document.getElementById('toggle')
+  const main = document.getElementById('main')
+
+  toggle?.addEventListener('click', () => {
+    main?.classList.toggle('rotated')
+  })
+</script>
+
+<Body transition:name='day-2' title='Rotating Navigation' class='dark bg-stripe-gradient overflow-hidden'>
+  <button
+    id='toggle'
+    class='absolute z-10 pt-6 md:pt-2 md:pb-6 pl-6 md:pl-2 md:pr-6 bottom-0 md:top-0 md:bottom-auto right-0 md:left-0 md:right-auto rounded-tl-full md:rounded-br-full md:rounded-tl-none bg-foreground text-background aspect-square w-20 select-none tap-highlight-transparent transition-all duration-200 hover:shadow-md hover:shadow-white/40 md:active:-translate-x-1 md:active:-translate-y-1'>
+    X
+  </button>
+  <aside
+    id='menu'
+    class='absolute flex items-end md:items-start flex-col-reverse md:flex-col top-0 md:bottom-0 md:top-auto right-0 md:left-0 md:right-auto p-6'>
+    <div>primero</div>
+    <div>segundo</div>
+    <div>tercero</div>
+  </aside>
+  <main id='main' class='h-screen origin-bottom-right md:origin-top-left'>
+    <div class='min-h-[200vh] bg-black -translate-y-64 pt-64'>
+      <div
+        class='max-h-screen text-4xl max-w-screen md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg overflow-y-auto overflow-w-hidden m-auto transition-all custom-scrollbar'>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eaque et tenetur, iste laborum illo
+        quibusdam aliquid quidem non nulla. Vero libero exercitationem unde distinctio tenetur consequuntur,
+        porro quisquam dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eaque et tenetur,
+        iste laborum illo quibusdam aliquid quidem non nulla. Vero libero exercitationem unde distinctio
+        tenetur consequuntur, porro quisquam dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Nobis eaque et tenetur, iste laborum illo quibusdam aliquid quidem non nulla. Vero libero
+        exercitationem unde distinctio tenetur consequuntur, porro quisquam dolor? Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Nobis eaque et tenetur, iste laborum illo quibusdam aliquid quidem non
+        nulla. Vero libero exercitationem unde distinctio tenetur consequuntur, porro quisquam dolor? Lorem
+        ipsum dolor sit amet consectetur adipisicing elit. Nobis eaque et tenetur, iste laborum illo quibusdam
+        aliquid quidem non nulla. Vero libero exercitationem unde distinctio tenetur consequuntur, porro
+        quisquam dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eaque et tenetur, iste
+        laborum illo Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eaque et tenetur, iste
+        laborum illo quibusdam aliquid quidem non nulla. Vero libero exercitationem unde distinctio tenetur
+        consequuntur, porro quisquam dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+        eaque et tenetur, iste laborum illo quibusdam aliquid quidem non nulla. Vero libero exercitationem
+        unde distinctio tenetur consequuntur, porro quisquam dolor? Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Nobis eaque et tenetur, iste laborum illo quibusdam aliquid quidem non nulla. Vero
+        libero exercitationem unde distinctio tenetur consequuntur, porro quisquam dolor? Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Nobis eaque et tenetur, iste laborum illo quibusdam aliquid
+        quidem non nulla. Vero libero exercitationem unde distinctio tenetur consequuntur, porro quisquam
+        dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eaque et tenetur, iste laborum
+        illo quibusdam aliquid quidem non nulla. Vero libero exercitationem unde distinctio tenetur
+        consequuntur, porro quisquam dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+        eaque et tenetur, iste laborum illo
+      </div>
+    </div>
+  </main>
+</Body>
+
+<style>
+  #main {
+    transition: transform 300ms ease-out;
+  }
+
+  .rotated {
+    transform: rotate(-20deg);
+  }
+
+  /* Srollbar style */
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #fff3;
+    border-radius: 0.25rem;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #fff4;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:active {
+    background: #fff6;
+  }
+
+  /* firefox scrollbar */
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #fff3 transparent;
+  }
+</style>
