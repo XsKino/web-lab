@@ -1,62 +1,78 @@
 ---
 import Body from '@layouts/Body.astro'
+import BlogContent from '@components/day/3/BlogContent'
 import { Icon } from 'astro-icon'
+
+const links = [
+  {
+    icon: 'earth',
+    label: 'Home',
+    href: '#home'
+  },
+  {
+    icon: 'planet',
+    label: 'Read the blog',
+    href: '#work'
+  },
+  {
+    icon: 'rocket',
+    label: 'Travel the universe!',
+    href: '#about'
+  }
+]
 ---
 
 <script>
-  const toggle = document.getElementById('toggle')
-  const main = document.getElementById('main')
+  const $toggle = document.getElementById('toggle')
+  const $main = document.getElementById('main')
 
-  toggle?.addEventListener('click', () => {
-    main?.classList.toggle('rotated')
+  $toggle?.addEventListener('click', () => {
+    $main?.classList.toggle('rotated')
   })
 </script>
 
-<Body transition:name='day-2' title='Rotating Navigation' class='dark bg-stripe-gradient overflow-hidden'>
+<Body
+  transition:name='day-2'
+  title='Rotating Navigation'
+  class='font-[Montserrat] dark bg-[url("/img/day/3/universe.gif")] md:bg-[url("/img/day/3/universe2.gif")] bg-cover overflow-hidden'>
   <button
     id='toggle'
-    class='absolute z-10 pt-6 md:pt-2 md:pb-6 pl-6 md:pl-2 md:pr-6 bottom-0 md:top-0 md:bottom-auto right-0 md:left-0 md:right-auto rounded-tl-full md:rounded-br-full md:rounded-tl-none bg-foreground text-background aspect-square w-20 select-none tap-highlight-transparent transition-all duration-200 hover:shadow-md hover:shadow-white/40 md:active:-translate-x-1 md:active:-translate-y-1'>
-    X
+    class={`absolute z-10 bottom-0 md:top-0 md:bottom-auto right-0 md:left-0 md:right-auto rounded-tl-full md:rounded-br-full md:rounded-tl-none bg-foreground text-background aspect-square w-20 select-none tap-highlight-transparent transition-all duration-200 hover:shadow-md hover:shadow-white/40 md:active:-translate-x-1 md:active:-translate-y-1
+      grid place-items-center pt-2 pl-2 md:pt-0 md:pl-0 md:pb-2 md:pr-2
+    `}>
+    <Icon name='star' class='h-[1.25em]' />
   </button>
-  <aside
-    id='menu'
-    class='absolute flex items-end md:items-start flex-col-reverse md:flex-col top-0 md:bottom-0 md:top-auto right-0 md:left-0 md:right-auto p-6'>
-    <div>primero</div>
-    <div>segundo</div>
-    <div>tercero</div>
-  </aside>
-  <main id='main' class='h-screen origin-bottom-right md:origin-top-left'>
-    <div class='min-h-[200vh] bg-black -translate-y-64 pt-64'>
+
+  <main id='main' class='h-screen shadow-inner origin-bottom-right md:origin-top-left'>
+    <div class='min-h-[200vh] shadow-lg bg-black/40 backdrop-blur -translate-y-64 pt-64'>
       <div
-        class='max-h-screen text-4xl max-w-screen md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg overflow-y-auto overflow-w-hidden m-auto transition-all custom-scrollbar'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eaque et tenetur, iste laborum illo
-        quibusdam aliquid quidem non nulla. Vero libero exercitationem unde distinctio tenetur consequuntur,
-        porro quisquam dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eaque et tenetur,
-        iste laborum illo quibusdam aliquid quidem non nulla. Vero libero exercitationem unde distinctio
-        tenetur consequuntur, porro quisquam dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Nobis eaque et tenetur, iste laborum illo quibusdam aliquid quidem non nulla. Vero libero
-        exercitationem unde distinctio tenetur consequuntur, porro quisquam dolor? Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Nobis eaque et tenetur, iste laborum illo quibusdam aliquid quidem non
-        nulla. Vero libero exercitationem unde distinctio tenetur consequuntur, porro quisquam dolor? Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Nobis eaque et tenetur, iste laborum illo quibusdam
-        aliquid quidem non nulla. Vero libero exercitationem unde distinctio tenetur consequuntur, porro
-        quisquam dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eaque et tenetur, iste
-        laborum illo Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eaque et tenetur, iste
-        laborum illo quibusdam aliquid quidem non nulla. Vero libero exercitationem unde distinctio tenetur
-        consequuntur, porro quisquam dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-        eaque et tenetur, iste laborum illo quibusdam aliquid quidem non nulla. Vero libero exercitationem
-        unde distinctio tenetur consequuntur, porro quisquam dolor? Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Nobis eaque et tenetur, iste laborum illo quibusdam aliquid quidem non nulla. Vero
-        libero exercitationem unde distinctio tenetur consequuntur, porro quisquam dolor? Lorem ipsum dolor
-        sit amet consectetur adipisicing elit. Nobis eaque et tenetur, iste laborum illo quibusdam aliquid
-        quidem non nulla. Vero libero exercitationem unde distinctio tenetur consequuntur, porro quisquam
-        dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eaque et tenetur, iste laborum
-        illo quibusdam aliquid quidem non nulla. Vero libero exercitationem unde distinctio tenetur
-        consequuntur, porro quisquam dolor? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-        eaque et tenetur, iste laborum illo
+        class='md:mx-2 overflow-y-auto overflow-w-hidden scrollbar-hide md:scrollbar-default custom-scrollbar'>
+        <div
+          class='max-h-screen text-4xl max-w-screen md:max-w-screen-sm lg:max-w-screen-md xl:max-w-screen-lg m-auto'>
+          <BlogContent />
+        </div>
       </div>
     </div>
   </main>
+  <aside
+    id='menu'
+    class='absolute flex items-end md:items-start flex-col-reverse md:flex-col top-0 md:bottom-0 md:top-auto right-0 md:left-0 md:right-auto p-6 overflow-hidden'>
+    {
+      links.map(({ icon, label, href }) => (
+        <a
+          href={href}
+          class='group flex flex-row-reverse md:flex-row w-full opacity-90 hover:opacity-100 text-lg md:text-xl text-foreground select-none tap-highlight-transparent p-4'>
+          <div class='flex w-min flex-col items-center'>
+            <span class='flex gap-4 w-max transition-none group-hover:font-semibold'>
+              <Icon name={icon} class='h-[1.25em]' />
+              <span>{label}</span>
+            </span>
+            <div class='w-0 group-hover:w-full transition-all h-[0.1em] bg-white' />
+          </div>
+        </a>
+      ))
+    }
+  </aside>
 </Body>
 
 <style>
@@ -66,6 +82,33 @@ import { Icon } from 'astro-icon'
 
   .rotated {
     transform: rotate(-20deg);
+  }
+
+  #menu > a {
+    translate: 150% 0;
+    transition: all 300ms ease-out;
+  }
+
+  @media (min-width: 768px) {
+    #menu > a {
+      translate: -150% 0;
+    }
+  }
+
+  .rotated ~ #menu > a {
+    translate: 0 0;
+  }
+
+  #menu > a:nth-child(1) {
+    transition-delay: 100ms;
+  }
+
+  #menu > a:nth-child(2) {
+    transition-delay: 50ms;
+  }
+
+  #menu > a:nth-child(3) {
+    transition-delay: 0ms;
   }
 
   /* Srollbar style */
