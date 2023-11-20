@@ -1,0 +1,61 @@
+---
+import Body from '@layouts/Body.astro'
+import { Icon } from 'astro-icon'
+---
+
+<script>
+  const $html = document.querySelector('html')
+  const $search = document.getElementById('search')
+  const $input: HTMLInputElement | null = document.getElementById('input') as HTMLInputElement | null
+
+  $search?.addEventListener('submit', e => {
+    e.preventDefault()
+    if (!$input?.value || !$search.classList.contains('expanded')) {
+      $input?.focus()
+      $search?.classList.toggle('expanded')
+    } else {
+      $input.value = ''
+      $html?.animate([{ background: '#53c274' }, {}], {
+        duration: 750
+      })
+      // $search?.classList.toggle('expanded')
+    }
+  })
+</script>
+
+<Body title='Hidden Search' class='dark bg-red-400 text-2xl font-[Montserrat]'>
+  <div class='h-screen w-screen grid place-items-center bg-stripe-gradient from-transparent to-blue-800/20'>
+    <form
+      id='search'
+      class='transition-all h-8 text-gray-800 flex items-center bg-white shadow-lg shadow-black/50 rounded-full'>
+      <input
+        id='input'
+        title='Search something!'
+        placeholder='Intergalactic coordinates'
+        type='text'
+        class='transition-all w-0 h-full font-semibold outline-none bg-transparent'
+      />
+      <button
+        id='button'
+        type='submit'
+        class='group h-full aspect-square transition-all grid place-items-center tap-highlight-transparent'>
+        <Icon name='search' class='h-6 group-active:scale-90 transition-all' />
+      </button>
+    </form>
+  </div>
+</Body>
+
+<style>
+  .expanded > input {
+    width: 20em;
+    padding: 0 0.75rem;
+  }
+
+  button {
+    transition: cubic-bezier(0.21, 1.22, 0.25, 1.14) all 750ms;
+  }
+
+  .expanded > button {
+    rotate: 360deg;
+  }
+</style>
