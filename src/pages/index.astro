@@ -5,7 +5,7 @@ import ProjectCard from '@/src/components/ProjectCard.tsx'
 import { Icon } from 'astro-icon'
 
 interface project {
-  day: number
+  test: number
   title: string
   image: string
   href: string
@@ -13,76 +13,76 @@ interface project {
 
 const projects: project[] = [
   {
-    day: 1,
+    test: 1,
     title: 'Expanding Cards',
-    image: '/img/day/1/thumbnail.jpg',
-    href: '/day/1'
+    image: '/img/test/1/thumbnail.jpg',
+    href: '/test/1'
   },
   {
-    day: 2,
+    test: 2,
     title: 'Progress Steps',
-    image: '/img/day/2/thumbnail.jpg',
-    href: '/day/2'
+    image: '/img/test/2/thumbnail.jpg',
+    href: '/test/2'
   },
   {
-    day: 3,
+    test: 3,
     title: 'Rotating Navigation',
-    image: '/img/day/3/thumbnail.jpg',
-    href: '/day/3'
+    image: '/img/test/3/thumbnail.jpg',
+    href: '/test/3'
   },
   {
-    day: 4,
+    test: 4,
     title: 'Hidden Search',
-    image: '/img/day/4/thumbnail.jpg',
-    href: '/day/4'
+    image: '/img/test/4/thumbnail.jpg',
+    href: '/test/4'
   },
   {
-    day: 5,
+    test: 5,
     title: 'Blurry Loading',
-    image: '/img/day/5/thumbnail.jpg',
-    href: '/day/5'
+    image: '/img/test/5/thumbnail.jpg',
+    href: '/test/5'
   },
   {
-    day: 6,
+    test: 6,
     title: 'Scroll Animation',
-    image: '/img/day/6/thumbnail.jpg',
-    href: '/day/6'
+    image: '/img/test/6/thumbnail.jpg',
+    href: '/test/6'
   },
   {
-    day: 7,
+    test: 7,
     title: 'Split Landing Page',
-    image: '/img/day/7/thumbnail.jpg',
-    href: '/day/7'
+    image: '/img/test/7/thumbnail.jpg',
+    href: '/test/7'
   },
   {
-    day: 8,
+    test: 8,
     title: 'Form Wave Animation',
-    image: '/img/day/8/thumbnail.jpg',
-    href: '/day/8'
+    image: '/img/test/8/thumbnail.jpg',
+    href: '/test/8'
   },
   {
-    day: 9,
+    test: 9,
     title: 'Sound Board',
-    image: '/img/day/9/thumbnail.jpg',
-    href: '/day/9'
+    image: '/img/test/9/thumbnail.jpg',
+    href: '/test/9'
   },
   {
-    day: 10,
+    test: 10,
     title: 'Dad Jokes',
-    image: '/img/day/10/thumbnail.jpg',
-    href: '/day/10'
+    image: '/img/test/10/thumbnail.jpg',
+    href: '/test/10'
   },
   {
-    day: 11,
+    test: 11,
     title: 'Event Keycodes',
-    image: '/img/day/11/thumbnail.jpg',
-    href: '/day/11'
+    image: '/img/test/11/thumbnail.jpg',
+    href: '/test/11'
   },
   {
-    day: 12,
+    test: 12,
     title: 'FAQ Collapse',
-    image: '/img/day/12/thumbnail.jpg',
-    href: '/day/12'
+    image: '/img/test/12/thumbnail.jpg',
+    href: '/test/12'
   }
 ]
 ---
@@ -99,7 +99,7 @@ const projects: project[] = [
         Projects
       </h1>
       <section id='project-grid' class='grid p-4 gap-4'>
-        {projects.map(project => <ProjectCard transition:name={`day-${project.day}`} client:only="react" day={project.day} title={project.title}, image={project.image}, href={project.href} />)}
+        {projects.map(project => <ProjectCard transition:name={`test-${project.test}`} client:only="react" test={project.test} title={project.title}, image={project.image}, href={project.href} />)}
       </section>
     </div>
   </main>

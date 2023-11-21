@@ -1,0 +1,55 @@
+---
+import Body from '@layouts/Body.astro'
+---
+
+<Body
+  title='Scroll Animation'
+  class='dark flex justify-center bg-gradient-to-tr bg-fixed from-black to-zinc-800'>
+  <div class='flex font-[Comfortaa] flex-col p-6 pt-14 pb-64 gap-20 items-center w-screen max-w-screen-sm'>
+    <h1
+      class='text-transparent bg-clip-text bg-gradient-to-br from-red-500 to-purple-500 text-4xl md:text-6xl'>
+      Scroll down!
+    </h1>
+
+    {
+      (() => {
+        const items = []
+        for (let i = 0; i < 20; i++) {
+          items.push(
+            <div
+              class={`animated shadow-xl shadow-black/40 bg-gradient-to-br from-red-500 to-purple-500 aspect-square h-64 rounded-lg grid place-items-center text-white text-8xl font-bold`}>
+              <h1 class='bg-clip-text font-bold text-transparent bg-gradient-to-t from-transparent to-white'>
+                {i + 1}
+              </h1>
+            </div>
+          )
+        }
+        return items
+      })()
+    }
+  </div>
+</Body>
+
+<style>
+  @keyframes animate {
+    from {
+      transform: translateY(100%);
+      scale: 0.1;
+      filter: blur(20px);
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animated {
+    view-timeline-name: --element;
+    animation-timeline: --element;
+    animation-name: animate;
+
+    view-timeline-axis: block;
+    animation-range: entry 0 cover 40%;
+    animation-fill-mode: both;
+  }
+</style>

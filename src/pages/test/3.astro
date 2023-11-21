@@ -1,6 +1,6 @@
 ---
 import Body from '@layouts/Body.astro'
-import BlogContent from '@components/day/3/BlogContent'
+import BlogContent from '@components/test/3/BlogContent'
 import { Icon } from 'astro-icon'
 
 const links = [
@@ -32,9 +32,9 @@ const links = [
 </script>
 
 <Body
-  transition:name='day-2'
+  transition:name='test-2'
   title='Rotating Navigation'
-  class='font-[Montserrat] dark bg-[url("/img/day/3/universe.gif")] md:bg-[url("/img/day/3/universe2.gif")] bg-cover overflow-hidden'>
+  class='font-[Montserrat] dark bg-[url("/img/test/3/universe.gif")] md:bg-[url("/img/test/3/universe2.gif")] bg-cover overflow-hidden'>
   <button
     id='toggle'
     class={`absolute z-10 bottom-0 md:top-0 md:bottom-auto right-0 md:left-0 md:right-auto rounded-tl-full md:rounded-br-full md:rounded-tl-none bg-foreground text-background aspect-square w-20 select-none tap-highlight-transparent transition-all duration-200 hover:shadow-md hover:shadow-white/40 md:active:-translate-x-1 md:active:-translate-y-1

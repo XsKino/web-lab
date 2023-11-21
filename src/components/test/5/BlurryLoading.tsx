@@ -32,7 +32,7 @@ export default function BlurryLoading(): JSX.Element {
   }, [load])
 
   return (
-    <div className='h-screen w-screen text-4xl font-[Cinzel] bg-cover bg-[url("/img/day/5/awake_mobile.png")] md:bg-[url("/img/day/5/awake_desktop.png")]'>
+    <div className='h-screen w-screen text-4xl font-[Cinzel] bg-center bg-cover bg-[url("/img/test/5/awake_mobile.png")] md:bg-[url("/img/test/5/awake_desktop.png")]'>
       <main
         className='h-full w-full grid place-items-center text-6xl md:text-8xl'
         style={{

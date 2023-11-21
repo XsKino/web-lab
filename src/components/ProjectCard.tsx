@@ -2,13 +2,13 @@ import React from 'react'
 import Atropos from 'atropos/react'
 
 interface Project {
-  day: number
+  test: number
   title: string
   image: string
   href: string
 }
 
-export default function ProjectCard({ day, title, image, href }: Project): JSX.Element {
+export default function ProjectCard({ test, title, image, href }: Project): JSX.Element {
   return (
     <Atropos rotateTouch={false}>
       <a className='w-full h-full grid place-items-center overflow-hidden' href={href}>
@@ -20,7 +20,7 @@ export default function ProjectCard({ day, title, image, href }: Project): JSX.E
       `}>
           <div className='relative w-full h-full grid place-items-center group'>
             <h1 className='text-3xl absolute transition-all group-hover:opacity-0 group-hover:-translate-y-12'>
-              Day {day}
+              test {test}
             </h1>
             <h1 className='text-lg md:text-2xl lg:text-3xl absolute bottom-4 transition-all translate-y-32 group-hover:translate-y-0'>
               {title}

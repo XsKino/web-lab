@@ -134,7 +134,7 @@ export default function BlogContent(): JSX.Element {
         waiting to happen.
       </p>
       <div className='w-full h-auto rounded-2xl md:rounded-3xl my-6 overflow-hidden shadow-lg'>
-        <img src='/img/day/3/sun.jpg' alt='An image of the sun' />
+        <img src='/img/test/3/sun.jpg' alt='An image of the sun' />
       </div>
       <p className='mt-8 text-xl md:text-2xl'>
         <span className='font-bold text-2xl md:3xl'>Extreme Temperatures</span>
