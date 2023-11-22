@@ -1,0 +1,50 @@
+---
+import Body from '@layouts/Body.astro'
+import { Icon } from 'astro-icon'
+
+const options = [
+  {
+    title: 'The Void Forest',
+    buttonText: "Let's... Go?",
+    buttonIcon: null,
+    buttonLink: null,
+    backgroundImage: '/img/test/7/forest.jpg',
+    animateOnHover: true
+  },
+  {
+    title: 'The Flower Fields',
+    buttonText: "Let's Go!",
+    buttonIcon: null,
+    buttonLink: null,
+    backgroundImage: '/img/test/7/mountains.jpg',
+    animateOnHover: true
+  }
+]
+---
+
+<Body title='Split Landing Page' class='dark h-screen w-screen'>
+  <div class='h-screen w-full flex flex-col md:flex-row font-[Montserrat]'>
+    {
+      options.map(({ title, buttonText, buttonIcon, buttonLink, backgroundImage, animateOnHover }) => (
+        <div
+          style={{ transitionDuration: '2s', textShadow: '0 2px 10px #0008' }}
+          class={`bg-[url("${backgroundImage}")] saturate-75 hover:saturate-100 group blur-sm hover:blur-none overflow-hidden bg-center flex-1 hover:flex-[4] transition-all h-full flex flex-col justify-center gap-32 items-center`}>
+          <h1
+            style={{ transitionDuration: '1.2s' }}
+            class='-translate-y-10 group-hover:translate-y-0 scale-50 group-hover:scale-100 transition-all text-6xl font-bold w-max'>
+            {title}
+          </h1>
+          <a
+            href={buttonLink}
+            style={{ transitionDuration: '1.2s' }}
+            class='opacity-50 hover:opacity-100 select-none w-max font-[Inconsolata] group-hover:shadow-xl shadow-black scale-0 group-hover:scale-100 cursor-pointer text-4xl py-6 px-10 border-0 group-hover:border-4 transition-all'>
+            {buttonText}{' '}
+            {buttonIcon && (
+              <Icon class={`h-[1em] inline ${animateOnHover && 'animate-on-hover'}`} name={buttonIcon} />
+            )}
+          </a>
+        </div>
+      ))
+    }
+  </div>
+</Body>
