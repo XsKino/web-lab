@@ -1,0 +1,164 @@
+---
+import Body from '@layouts/Body.astro'
+---
+
+<script>
+  const $emailContainer = document.getElementById('emailContainer')
+  const $emailInput = $emailContainer?.querySelector('input')
+
+  $emailInput?.addEventListener('focus', () => {
+    $emailContainer?.classList.add('active')
+  })
+
+  $emailInput?.addEventListener('blur', () => {
+    if ($emailInput.value === '') {
+      $emailContainer?.classList.remove('active')
+    }
+  })
+
+  const $passwordContainer = document.getElementById('passwordContainer')
+  const $passwordInput = $passwordContainer?.querySelector('input')
+
+  $passwordInput?.addEventListener('focus', () => {
+    $passwordContainer?.classList.add('active')
+  })
+
+  $passwordInput?.addEventListener('blur', () => {
+    if ($passwordInput.value === '') {
+      $passwordContainer?.classList.remove('active')
+    }
+  })
+</script>
+
+<Body title='Form Wave Animation' class='bg-sky-600 bg-stripe-gradient bg-cover bg-fixed text-zinc-50'>
+  <div class='h-screen grid place-items-center text-lg md:text-xl'>
+    <form
+      class='flex flex-col gap-4 p-4 md:gap-6 md:p-8 bg-sky-800 shadow-lg rounded-lg md:rounded-xl font-[Montserrat] w-[80vw] max-w-screen-sm'>
+      <h1 class='text-2xl md:text-3xl font-bold text-center'>Login</h1>
+      <div id='emailContainer' class='flex flex-col'>
+        <label for='email'>{'Email'.split('').map(x => <span>{x}</span>)}</label>
+        <input
+          type='email'
+          name='email'
+          required
+          class='py-3 z-10 outline-none border-b-3 border-zinc-50 bg-transparent'
+        />
+      </div>
+      <div id='passwordContainer' class='flex flex-col'>
+        <label for='password'>{'Password'.split('').map(x => <span>{x}</span>)}</label>
+        <input
+          type='password'
+          name='password'
+          required
+          class='py-3 z-10 outline-none border-b-3 border-zinc-50 bg-transparent'
+        />
+      </div>
+
+      <button type='submit' class='p-6 grid-place-items-center bg-sky-500 hover:bg-sky-600 rounded-lg'>
+        Login</button
+      >
+      <p class='text-sm'>Don't have an account? <a href='#' class='text-sky-500'>Register</a></p>
+    </form>
+  </div>
+</Body>
+
+<style>
+  label > span {
+    display: inline-block;
+    translate: 0 2em;
+  }
+
+  label > span,
+  input {
+    transition: all 0.1s cubic-bezier(0.48, -0.1, 0.53, 1.45);
+  }
+
+  .active > label > span {
+    translate: 0 0;
+    color: #fffa;
+  }
+
+  .active > input {
+    border-color: #fffa;
+  }
+
+  label > span:nth-child(2) {
+    transition-delay: 0.05s;
+  }
+
+  label > span:nth-child(3) {
+    transition-delay: 0.1s;
+  }
+
+  label > span:nth-child(4) {
+    transition-delay: 0.15s;
+  }
+
+  label > span:nth-child(5) {
+    transition-delay: 0.2s;
+  }
+
+  label > span:nth-child(6) {
+    transition-delay: 0.25s;
+  }
+
+  label > span:nth-child(7) {
+    transition-delay: 0.3s;
+  }
+
+  label > span:nth-child(8) {
+    transition-delay: 0.35s;
+  }
+
+  label > span:nth-child(9) {
+    transition-delay: 0.4s;
+  }
+
+  label > span:nth-child(10) {
+    transition-delay: 0.45s;
+  }
+
+  label > span:nth-child(11) {
+    transition-delay: 0.5s;
+  }
+
+  label > span:nth-child(12) {
+    transition-delay: 0.55s;
+  }
+
+  label > span:nth-child(13) {
+    transition-delay: 0.6s;
+  }
+
+  label > span:nth-child(14) {
+    transition-delay: 0.65s;
+  }
+
+  label > span:nth-child(15) {
+    transition-delay: 0.7s;
+  }
+
+  label > span:nth-child(16) {
+    transition-delay: 0.75s;
+  }
+
+  label > span:nth-child(17) {
+    transition-delay: 0.8s;
+  }
+
+  label > span:nth-child(18) {
+    transition-delay: 0.85s;
+  }
+
+  label > span:nth-child(19) {
+    transition-delay: 0.9s;
+  }
+
+  label > span:nth-child(20) {
+    transition-delay: 0.95s;
+  }
+
+  label > span:nth-child(21) {
+    transition-delay: 1s;
+  }
+</style>
