@@ -1,0 +1,62 @@
+---
+import Body from '@layouts/Body.astro'
+import Tile from '@/src/components/test/9/Tile'
+
+const soundUrl = '/sound/test/9'
+const sounds = [
+  {
+    src: `${soundUrl}/dog.wav`,
+    icon: '🐶'
+  },
+  {
+    src: `${soundUrl}/cat.wav`,
+    icon: '🐱',
+    volume: 0.5
+  },
+  {
+    src: `${soundUrl}/mouse.wav`,
+    icon: '🐭',
+    volume: 0.1
+  },
+  {
+    src: `${soundUrl}/hamster.wav`,
+    icon: '🐹'
+  },
+  {
+    src: `${soundUrl}/dragon.wav`,
+    icon: '🐲',
+    volume: 0.1
+  },
+  {
+    src: `${soundUrl}/chicken.wav`,
+    icon: '🐔'
+  },
+  {
+    src: `${soundUrl}/frog.ogg`,
+    icon: '🐸'
+  },
+  {
+    src: `${soundUrl}/horse.wav`,
+    icon: '🐴',
+    volume: 1
+  },
+  {
+    src: `${soundUrl}/pig.wav`,
+    icon: '🐷'
+  }
+]
+---
+
+<Body title='Sound Board' class='dar bg-gray-900 bg-stripe-gradient'>
+  <main class='h-screen bg-cover grid place-content-center'>
+    <section class='p-[8vmin] aspect-square w-[100vmin] gap-[6vmin] grid grid-cols-3 grid-rows-3'>
+      {
+        sounds.map(sound => (
+          <Tile client:load sound={sound.src} volume={sound.volume}>
+            {sound.icon}
+          </Tile>
+        ))
+      }
+    </section>
+  </main>
+</Body>
