@@ -62,6 +62,7 @@ export default function Joke(): JSX.Element {
     <>
       <p className='text-xl md:text-4xl text-[#333]'>{joke}</p>
       <Button
+        disabled={loading}
         size='lg'
         radius='full'
         isIconOnly
