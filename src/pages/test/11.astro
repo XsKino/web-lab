@@ -1,0 +1,65 @@
+---
+import Body from '@layouts/Body.astro'
+
+const attributes = [
+  {
+    name: 'event.key',
+    id: 'event-key'
+  },
+  {
+    name: 'event.keyCode',
+    id: 'event-keycode'
+  },
+  {
+    name: 'event.code',
+    id: 'event-code'
+  }
+]
+---
+
+<script>
+  const $ = document.querySelector.bind(document)
+
+  const key = $('#event-key')
+  const keycode = $('#event-keycode')
+  const code = $('#event-code')
+  const main = $('main')
+  const advice = $('#advice')
+
+  if (key && keycode && code && main && advice) {
+    window.addEventListener('keydown', event => {
+      main.classList.remove('opacity-0')
+      advice.classList.add('hidden')
+      key.textContent = event.key
+      keycode.textContent = event.keyCode.toString()
+      code.textContent = event.code
+    })
+  }
+</script>
+
+<Body title='Event Keycodes' class='dark bg-fuchsia-800 bg-stripe-gradient'>
+  <div class='grid place-items-center h-screen'>
+    <h1
+      id='advice'
+      class='absolute text-center text-3xl md:text-6xl font-[Comfortaa] bg-clip-text text-transparent bg-gradient-to-t from-transparent to-white'>
+      Press any key
+    </h1>
+    <main
+      class='opacity-0 flex flex-col md:flex-row p-10 md:p-[10vmax] gap-[10vmax] justify-around w-full max-w-screen-g text-6xl font-[Comfortaa]'>
+      {
+        attributes.map(({ name, id }) => (
+          <div class='flex flex-col gap-2 flex-1'>
+            <h1 class='text-2xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-t from-transparent to-white'>
+              {name}
+            </h1>
+            <section class='grid place-items-center bg-black/10 shadow-[inset_0_0_0.4em] shadow-black/30 min-h-[1.5em] rounded-lg backdrop-blur-sm'>
+              <p class='text-4xl font-bold ' id={id}>
+                {' '}
+              </p>
+            </section>
+          </div>
+        ))
+      }
+    </main>
+  </div>
+</Body>
