@@ -1,0 +1,37 @@
+---
+import Body from '@layouts/Body.astro'
+import Joke from '@components/test/10/Joke'
+---
+
+<Body title='Dad Jokes'>
+  <div id='screen' class='h-screen grid place-items-center'>
+    <main
+      class='shadow-xl shadow-black/30 bg-white transition-all h-full w-full md:h-auto md:w-auto md:rounded-xl p-8 md:p-14 text-zinc-900 text-lg md:text-2xl grid place-content-center'>
+      <div
+        class='flex transition-all flex-col justify-between items-center gap-8 min-h-[33vh] min-w-[80vmin] max-w-[100vmin]'>
+        <h1>Dad Jokes</h1>
+        <Joke client:load />
+      </div>
+    </main>
+  </div>
+</Body>
+
+<style>
+  :root {
+    --color: #333;
+    text-wrap: pretty;
+  }
+
+  #screen {
+    background-color: var(--color);
+    transition: background-color 1s ease;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--color);
+    transition: color 1s ease;
+  }
+</style>
