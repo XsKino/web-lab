@@ -164,7 +164,7 @@ export default function Progress(): JSX.Element {
   return (
     <div className='h-screen grid place-items-center relative'>
       <ProgressBar className='absolute stroke-white/5 -z-10 h-[80vmin]' percentage={null} />
-      <ProgressBar className={`absolute stroke-zinc-700 h-[80vmin]`} percentage={percentage} />
+      <ProgressBar className={`absolute stroke-red-500 h-[80vmin]`} percentage={percentage} />
 
       {steps.map((step, index) => {
         const angle = circumference / 2 - ((n - 1 - index) * circumference) / (n - 1)
@@ -189,8 +189,8 @@ export default function Progress(): JSX.Element {
               transform: `rotate(${angle}deg) translateY(-30.7692vmin) rotate(calc(0deg - ${angle}deg))`
             }}>
             <span
-              className={`text-lg grid place-items-center transition-all p-2 border-zinc-700 rounded-full aspect-square h-14 w-14
-              ${done ? 'bg-zinc-700 opacity-100 border-8 md:scale-150' : 'opacity-40 border-0'}
+              className={`text-lg grid place-items-center transition-all p-2 border-red-500 rounded-full aspect-square h-14 w-14
+              ${done ? 'bg-red-500 opacity-100 border-8 md:scale-150' : 'opacity-40 border-0'}
             `}
               style={
                 !done
