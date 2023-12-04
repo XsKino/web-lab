@@ -60,7 +60,7 @@ export default function Joke(): JSX.Element {
 
   return (
     <>
-      <p className='text-xl md:text-4xl'>{joke}</p>
+      <p className='text-xl md:text-4xl text-[#333]'>{joke}</p>
       <Button
         size='lg'
         radius='full'
