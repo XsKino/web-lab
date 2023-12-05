@@ -19,8 +19,8 @@ export default function ProjectCard({ test, title, image, href }: Project): JSX.
         />
         <div
           className={`absolute backdrop-blur-[2px] backdrop-grayscale hover:backdrop-filter-none transition-all cover grid place-items-center overflow-hidden h-full w-full
-      bg-[radial-gradient(_circle,_rgba(0,_0,_0,_0.6783088235294117)_2%,_rgba(0,_0,_0,_0.01724439775910369)_100%)]
-      hover:bg-[linear-gradient(_0deg,_rgba(0,_0,_0,_0.6334908963585435)_0%,_rgba(0,_0,_0,_0)_44%,_rgba(0,_0,_0,_0)_100%)]
+                bg-[radial-gradient(_circle,_rgba(0,_0,_0,_0.6783088235294117)_2%,_rgba(0,_0,_0,_0.01724439775910369)_100%)]
+              hover:bg-[linear-gradient(_0deg,_rgba(0,_0,_0,_0.6334908963585435)_0%,_rgba(0,_0,_0,_0)_44%,_rgba(0,_0,_0,_0)_100%)]
       `}>
           <div className='relative w-full h-full grid place-items-center group'>
             <h1 className='text-3xl absolute transition-all group-hover:opacity-0 group-hover:-translate-y-12'>

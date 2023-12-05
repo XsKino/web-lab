@@ -1,5 +1,5 @@
 import { nextui } from '@nextui-org/react'
-import { darkThemeColors, lightThemeColors } from './src/styles/colorThemes'
+import { webLab as colors } from './src/styles/colorThemes'
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -7,7 +7,9 @@ export default {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {}
+    extend: {
+      colors
+    }
   },
   darkMode: 'class',
   plugins: [
@@ -15,10 +17,10 @@ export default {
       addCommonColors: true,
       themes: {
         dark: {
-          colors: darkThemeColors
+          colors
         },
         light: {
-          colors: lightThemeColors
+          colors
         }
       }
     })

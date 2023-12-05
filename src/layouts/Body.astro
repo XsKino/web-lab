@@ -23,15 +23,24 @@ const { title, class: htmlClass } = Astro.props
   <body>
     <slot />
     <style is:global>
+      :root {
+        --gradient: linear-gradient(
+          239deg,
+          rgba(255, 239, 115, 1) 0%,
+          rgba(255, 92, 176, 1) 48%,
+          rgba(160, 197, 255, 1) 100%
+        );
+      }
       html,
       body {
+        text-wrap: pretty;
         margin: 0;
         padding: 0;
         font-family:
+          Comfortaa,
           Montserrat,
           Cinzel,
           Manrope,
-          Comfortaa,
           system-ui,
           -apple-system,
           BlinkMacSystemFont,
@@ -45,6 +54,15 @@ const { title, class: htmlClass } = Astro.props
           sans-serif;
         font-size: 16px;
         line-height: 1.5;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-wrap: balance;
       }
       @font-face {
         font-family: 'Montserrat';

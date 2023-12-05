@@ -1,0 +1,20 @@
+@keyframes navbar {
+  from {
+    height: 15svh;
+  }
+  to {
+    height: 8vh;
+  }
+}
+
+.navbar {
+  height: 15svh;
+  view-timeline-name: --navbar;
+  view-timeline-axis: block;
+  animation-timeline: --navbar;
+  animation-name: navbar;
+  animation-fill-mode: both;
+
+  animation-range-start: 100vh;
+  animation-range-end: 110vh;
+}

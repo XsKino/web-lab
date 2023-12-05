@@ -1,121 +1,58 @@
 ---
 import Body from '@layouts/Body.astro'
-import NavBar from '@components/NavBar.astro'
-import ProjectCard from '@/src/components/ProjectCard.tsx'
-import { Icon } from 'astro-icon'
+import NavBar from '@components/NavBar'
+import ProjectCard from '@components/ProjectCard.tsx'
+import RotatingIcon from '@components/RotatingIcon.astro'
 
-interface project {
-  test: number
-  title: string
-  image: string
-  href: string
-}
+import projects from '@data/projects'
 
-const projects: project[] = [
-  {
-    test: 1,
-    title: 'Expanding Cards',
-    image: '/img/test/1/thumbnail.jpg',
-    href: '/test/1'
-  },
-  {
-    test: 2,
-    title: 'Progress Steps',
-    image: '/img/test/2/thumbnail.jpg',
-    href: '/test/2'
-  },
-  {
-    test: 3,
-    title: 'Rotating Navigation',
-    image: '/img/test/3/thumbnail.jpg',
-    href: '/test/3'
-  },
-  {
-    test: 4,
-    title: 'Hidden Search',
-    image: '/img/test/4/thumbnail.jpg',
-    href: '/test/4'
-  },
-  {
-    test: 5,
-    title: 'Blurry Loading',
-    image: '/img/test/5/thumbnail.jpg',
-    href: '/test/5'
-  },
-  {
-    test: 6,
-    title: 'Scroll Animation',
-    image: '/img/test/6/thumbnail.jpg',
-    href: '/test/6'
-  },
-  {
-    test: 7,
-    title: 'Split Landing Page',
-    image: '/img/test/7/thumbnail.jpg',
-    href: '/test/7'
-  },
-  {
-    test: 8,
-    title: 'Form Wave Animation',
-    image: '/img/test/8/thumbnail.jpg',
-    href: '/test/8'
-  },
-  {
-    test: 9,
-    title: 'Sound Board',
-    image: '/img/test/9/thumbnail.jpg',
-    href: '/test/9'
-  },
-  {
-    test: 10,
-    title: 'Dad Jokes',
-    image: '/img/test/10/thumbnail.jpg',
-    href: '/test/10'
-  },
-  {
-    test: 11,
-    title: 'Event Keycodes',
-    image: '/img/test/11/thumbnail.jpg',
-    href: '/test/11'
-  },
-  {
-    test: 12,
-    title: 'FAQ Collapse',
-    image: '/img/test/12/thumbnail.jpg',
-    href: '/test/12'
-  }
-]
 ---
 
-<Body title="Kino's Web Lab" class='dark flex flex-col'>
-  <header class='grid place-items-center h-[85svh]'>
-    <Icon class='h-52' name='kino' />
-  </header>
-  <main id='projects'>
-    <NavBar />
-    <div class='w-full md:max-w-[80%] m-auto'>
-      <h1
-        class='p-4 text-2xl md:text-4xl w-full bg-gradient-to-r from-[#fff2] to-transparent md:rounded-l-md'>
-        Projects
-      </h1>
-      <section id='project-grid' class='grid p-4 gap-4'>
-        {projects.map(project => <ProjectCard transition:name={`test-${project.test}`} client:only="react" test={project.test} title={project.title}, image={project.image}, href={project.href} />)}
-      </section>
+<Body title="Kino's Web Lab" class='dark flex flex-col [background-image:var(--gradient)] bg-cover bg-fixed'>
+  <header id="header" class='h-[85vh] flex flex-col relative overflow-hidden '>
+    <div class="md:absolute border-l-3 m-4 border-primary p-2 animate-appearance-in">
+      <h1 class="font-semibold text-lg md:text-2xl">Kino's Web Lab</h1>
+      <section id="socials md:text-xl">xd xd xd</section>
     </div>
+    <div class="flex flex-1 flex-col md:flex-row-reverse items-center">
+      <RotatingIcon class='h-full w-full flex-4 md:flex-1'/>
+      <div class="flex-1 p-4 md:p-20 md:pr-0 md:max-w-[50vw]">
+        <div class="flex flex-col gap-2 md:gap-4 text-center md:text-end md:p-10 md:border-r-5 md:border-primary">
+          <h1 class="font-bold text-2xl md:text-3xl">Welcome!<h1/>
+            <p class="text-lg md:2xl">Have fun exploring over {Math.floor((projects.length -1)/5)*5} interesting front-end projects made with different technologies!</p>
+            <p class="text-lg md:2xl hidden md:inline">I intend to make this website a place to showcase some cool capabilities of the web platform, and to inspire others to do the same, specially people who are just starting out.</p>
+
+        </div>
+      </div>
+
+    </div>
+  </header>
+  <main>
+    <NavBar client:load />
+    <div id='tests' class="w-full bg-background">
+      <div class='w-full md:max-w-[80%] m-auto'>
+        <h1
+          class='p-4 text-2xl md:text-4xl w-full bg-gradient-to-r from-[#fff2] to-transparent md:rounded-l-md'>
+          Projects
+        </h1>
+        <section id='project-grid' class='grid p-4 gap-4'>
+          {projects.map(project => <ProjectCard transition:name={`test-${project.test}`} client:only="react" test={project.test} title={project.title}, image={project.image}, href={project.href} />)}
+        </section>
+      </div>
+    </div>
+    <hr class="bg-transparent h-[8vh] border-none">
   </main>
-  <footer class='bg-secondary h-screen' id='about'>about</footer>
+  <footer class='h-[92vh]' id='about'>about</footer>
 </Body>
 
 <style>
   #project-grid {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-auto-rows: minmax(100px, auto);
   }
 
   @media screen and (min-width: 460px) {
     #project-grid {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      grid-auto-rows: minmax(160px, auto);
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     }
   }
 </style>
