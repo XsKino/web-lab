@@ -164,7 +164,7 @@ export default function NavBar(): JSX.Element {
             <Button
               color='primary'
               variant='ghost'
-              size='lg'
+              size='md'
               radius='full'
               className='backdrop-blur-lg'
               endContent={element.icon}
