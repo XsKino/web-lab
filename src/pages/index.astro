@@ -8,7 +8,7 @@ import projects from '@data/projects'
 ---
 
 <Body title="Kino's Web Lab" class='dark flex flex-col [background-image:var(--gradient)] bg-cover bg-fixed'>
-  <header id='header' class='h-[85vh] flex flex-col relative overflow-hidden'>
+  <header id='header' class='h-[85svh] flex flex-col relative overflow-hidden'>
     <div class='md:absolute border-l-3 m-4 border-primary p-2 animate-appearance-in'>
       <h1 class='font-semibold text-lg md:text-2xl'>Kino's Web Lab</h1>
       <section id='socials md:text-xl'>xd xd xd</section>
@@ -34,9 +34,14 @@ import projects from '@data/projects'
   <main>
     <NavBar client:load />
     <div id='tests' class='w-full bg-background'>
-      <div class='w-full md:max-w-[80%] m-auto'>
+      <hr class='bg-transparent h-[16vh] border-none' />
+      <div class='w-full md:max-w-[80%] m-auto flex flex-col relative'>
         <h1
-          class='p-4 text-2xl md:text-4xl w-full bg-gradient-to-r from-[#fff2] to-transparent md:rounded-l-md'>
+          class='py-6 select-none text-5xl md:text-7xl text-center bg-clip-text text-transparent bg-fixed bg-cover [background-image:var(--gradient)] absolute blur w-full animate-pulse'>
+          Projects
+        </h1>
+        <h1
+          class='py-6 pb-20 text-5xl md:text-7xl text-center bg-clip-text text-transparent bg-fixed bg-cover [background-image:var(--gradient)]'>
           Projects
         </h1>
         <section id='project-grid' class='grid p-4 gap-4'>
