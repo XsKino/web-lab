@@ -3,6 +3,20 @@ import ProjectCard from '@components/ProjectCard'
 import projects from '@data/projects'
 import { Switch } from '@nextui-org/switch'
 
+const InfoIcon = ({ active }: { active: boolean }): JSX.Element => (
+  <svg
+    className={`h-[1em] transition-colors ${active ? 'fill-secondary' : 'fill-background'}`}
+    stroke='currentColor'
+    fill='currentColor'
+    strokeWidth='0'
+    viewBox='0 0 16 16'
+    height='200px'
+    width='200px'
+    xmlns='http://www.w3.org/2000/svg'>
+    <path d='m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704l1.323-6.208Zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0Z'></path>
+  </svg>
+)
+
 export default function Projects(): JSX.Element {
   const [forceInfo, setForceInfo] = useState(false)
 
@@ -16,8 +30,12 @@ export default function Projects(): JSX.Element {
           Projects
         </h1>
         <div style={{ opacity: forceInfo ? 1 : 0.75 }} className={`flex items-center gap-4 transition-all`}>
-          <p className='text-base md:text-xl'>Show info</p>
-          <Switch color='secondary' isSelected={forceInfo} onValueChange={setForceInfo} />
+          <Switch
+            color='secondary'
+            thumbIcon={<InfoIcon active={forceInfo} />}
+            isSelected={forceInfo}
+            onValueChange={setForceInfo}
+          />
         </div>
       </div>
       <section
