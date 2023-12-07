@@ -1,0 +1,105 @@
+.showInfo {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.cardImage {
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+}
+
+.showInfo:hover .cardImage,
+.showInfo:focus .cardImage,
+.showInfo:active .cardImage {
+  transform: scale(1);
+}
+
+.cardOverlay {
+  position: absolute;
+  backdrop-filter: blur(2px) grayscale(1);
+  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(circle, #0008 2%, #00000004 100%);
+}
+
+.showInfo:hover .cardOverlay,
+.showInfo:focus .cardOverlay,
+.showInfo:active .cardOverlay {
+  backdrop-filter: blur(0) grayscale(0);
+  background: linear-gradient(0deg, #0008 0%, rgba(0, 0, 0, 0) 44%, rgba(0, 0, 0, 0) 56%, #0004 100%);
+}
+
+.testNumber {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+
+.showInfo:hover .testNumber,
+.showInfo:focus .testNumber,
+.showInfo:active .testNumber,
+.forceInfo .testNumber {
+  opacity: 0;
+  transform: translateY(-3rem);
+}
+
+.testName,
+.testNumber {
+  text-shadow: 0 0 0.8rem #000;
+}
+
+.testName {
+  font-family: 'Indie Flower';
+  font-size: 1.125rem;
+
+  position: absolute;
+  bottom: 1rem;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(6rem);
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+.showInfo:hover .testName,
+.showInfo:focus .testName,
+.showInfo:active .testName,
+.forceInfo .testName {
+  transform: translateY(0);
+}
+
+.testTechnologies {
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0;
+  display: flex;
+  gap: 0.3rem;
+  position: absolute;
+  top: 0.8rem;
+  transform: translateY(-6rem);
+}
+
+.showInfo:hover .testTechnologies,
+.showInfo:focus .testTechnologies,
+.showInfo:active .testTechnologies,
+.forceInfo .testTechnologies {
+  transform: translateY(0);
+}

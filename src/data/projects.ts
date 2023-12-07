@@ -1,9 +1,12 @@
 /* eslint-disable @typescript-eslint/consistent-type-definitions */
-type Project = {
+type Technology = 'Astro' | 'JavaScript' | 'CSS' | 'React' | 'Vue' | 'Tailwind' | 'Bootstrap' | 'Svelte'
+
+export type Project = {
   test: number
   title: string
   image: string
   href: string
+  technologies?: Technology[]
 }
 
 const projects: Project[] = [
@@ -11,67 +14,78 @@ const projects: Project[] = [
     test: 1,
     title: 'Expanding Cards',
     image: '/img/test/1/thumbnail.jpg',
-    href: '/test/1'
+    href: '/test/1',
+    technologies: ['Astro', 'Tailwind']
   },
   {
     test: 2,
     title: 'Progress Steps',
     image: '/img/test/2/thumbnail.jpg',
-    href: '/test/2'
+    href: '/test/2',
+    technologies: ['React', 'Tailwind']
   },
   {
     test: 3,
     title: 'Rotating Navigation',
     image: '/img/test/3/thumbnail.jpg',
-    href: '/test/3'
+    href: '/test/3',
+    technologies: ['Astro', 'React', 'CSS', 'Tailwind']
   },
   {
     test: 4,
     title: 'Hidden Search',
     image: '/img/test/4/thumbnail.jpg',
-    href: '/test/4'
+    href: '/test/4',
+    technologies: ['JavaScript', 'Tailwind']
   },
   {
     test: 5,
     title: 'Blurry Loading',
     image: '/img/test/5/thumbnail.jpg',
-    href: '/test/5'
+    href: '/test/5',
+    technologies: ['React', 'Tailwind']
   },
   {
     test: 6,
     title: 'Scroll Animation',
     image: '/img/test/6/thumbnail.jpg',
-    href: '/test/6'
+    href: '/test/6',
+    technologies: ['Astro', 'Tailwind']
   },
   {
     test: 7,
     title: 'Split Landing Page',
     image: '/img/test/7/thumbnail.jpg',
-    href: '/test/7'
+    href: '/test/7',
+    technologies: ['Astro', 'Tailwind']
   },
   {
     test: 8,
     title: 'Form Wave Animation',
     image: '/img/test/8/thumbnail.jpg',
-    href: '/test/8'
+    href: '/test/8',
+    technologies: ['Astro', 'Tailwind']
   },
   {
     test: 9,
     title: 'Sound Board',
     image: '/img/test/9/thumbnail.jpg',
-    href: '/test/9'
+    href: '/test/9',
+    technologies: ['React', 'Tailwind']
   },
   {
     test: 10,
     title: 'Dad Jokes',
     image: '/img/test/10/thumbnail.jpg',
-    href: '/test/10'
+    href: '/test/10',
+    technologies: ['React', 'Tailwind']
   },
   {
     test: 11,
     title: 'Event Keycodes',
     image: '/img/test/11/thumbnail.jpg',
-    href: '/test/11'
+    href: '/test/11',
+    technologies: ['React', 'Tailwind']
   }
   // {
   //   test: 12,

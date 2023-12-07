@@ -1,34 +1,47 @@
+/* eslint-disable @typescript-eslint/consistent-type-definitions */
 import React from 'react'
 import Atropos from 'atropos/react'
+import { type Project } from '@data/projects'
+import styles from '@styles/components/ProjectCard.module.css'
 
-interface Project {
-  test: number
-  title: string
-  image: string
-  href: string
-}
-
-export default function ProjectCard({ test, title, image, href }: Project): JSX.Element {
+export default function ProjectCard({
+  test,
+  title,
+  image,
+  href,
+  technologies,
+  forceInfo
+}: Project & { forceInfo: boolean }): JSX.Element {
   return (
     <Atropos rotateTouch={false}>
-      <a className='group w-full h-full grid place-items-center overflow-hidden ' href={href}>
-        <img
-          className='scale-110 group-hover:scale-100 transition-all w-full h-full object'
-          src={image}
-          alt={title}
-        />
-        <div
-          className={`absolute backdrop-blur-[2px] backdrop-grayscale hover:backdrop-filter-none transition-all cover grid place-items-center overflow-hidden h-full w-full
-                bg-[radial-gradient(_circle,_rgba(0,_0,_0,_0.6783088235294117)_2%,_rgba(0,_0,_0,_0.01724439775910369)_100%)]
-              hover:bg-[linear-gradient(_0deg,_rgba(0,_0,_0,_0.6334908963585435)_0%,_rgba(0,_0,_0,_0)_44%,_rgba(0,_0,_0,_0)_100%)]
-      `}>
+      <a className={`${styles.showInfo} ${forceInfo && styles.forceInfo}`} href={href}>
+        <img className={styles.cardImage} src={image} alt={title} />
+        <div className={styles.cardOverlay}>
           <div className='relative w-full h-full grid place-items-center group'>
-            <h1 className='text-3xl absolute transition-all group-hover:opacity-0 group-hover:-translate-y-12'>
-              test {test}
-            </h1>
-            <h1 className='font-["Indie_Flower"] text-lg md:text-2xl lg:text-3xl absolute bottom-4 transition-all translate-y-32 group-hover:translate-y-0'>
-              {title}
-            </h1>
+            <h1 className={styles.testNumber}>test {test}</h1>
+            <h1 className={styles.testName}>{title}</h1>
+            <section className={`${styles.testTechnologies} brightness-0 blur-md`}>
+              {technologies?.map(tech => (
+                <img
+                  src={`/img/technologies/${tech}.png`}
+                  className='h-5 md:h-8 lg:h-10 w-auto'
+                  key={tech}
+                  title={tech}
+                  alt={tech}
+                />
+              ))}
+            </section>
+            <section className={styles.testTechnologies}>
+              {technologies?.map(tech => (
+                <img
+                  src={`/img/technologies/${tech}.png`}
+                  className='h-5 md:h-8 lg:h-10 w-auto'
+                  key={tech}
+                  title={tech}
+                  alt={tech}
+                />
+              ))}
+            </section>
           </div>
         </div>
       </a>

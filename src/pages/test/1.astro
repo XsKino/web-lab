@@ -59,7 +59,7 @@ const cards = [
   class='dark bg-gradient-to-tr from-[#020202] to-[#333]'>
   <div class='h-screen p-10 gap-6 flex flex-col md:flex-row'>
     {
-      cards.map((card: Card, index: number) => (
+      cards.map((card: Card) => (
         <div class='relative card shadow-xl flex-1 rounded-xl overflow-hidden cursor-pointer touch-pan-down tap-highlight-transparent'>
           <div class='shine z-50 bg-gradient-to-br blur-sm from-white to-transparent absolute w-screen h-full rotate-12 -translate-x-52' />
           <img class='h-full w-full object-cover' src={card.image} alt={card.title} />

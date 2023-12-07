@@ -1,7 +1,7 @@
 ---
 import Body from '@layouts/Body.astro'
 import NavBar from '@components/NavBar'
-import ProjectCard from '@components/ProjectCard.tsx'
+import Projects from '@components/Projects'
 import RotatingIcon from '@components/RotatingIcon.astro'
 
 import projects from '@data/projects'
@@ -33,46 +33,12 @@ import projects from '@data/projects'
   </header>
   <main>
     <NavBar client:load />
-    <div id='tests' class='w-full bg-background'>
+    <div id='tests' class='w-full bg-background bg-stripe-gradient'>
       <hr class='bg-transparent h-[16vh] border-none' />
-      <div class='w-full md:max-w-[80%] m-auto flex flex-col relative'>
-        <h1
-          class='py-6 select-none text-5xl md:text-7xl text-center bg-clip-text text-transparent bg-fixed bg-cover [background-image:var(--gradient)] absolute blur w-full animate-pulse'>
-          Projects
-        </h1>
-        <h1
-          class='py-6 pb-20 text-5xl md:text-7xl text-center bg-clip-text text-transparent bg-fixed bg-cover [background-image:var(--gradient)]'>
-          Projects
-        </h1>
-        <section id='project-grid' class='grid p-4 gap-4'>
-          {
-            projects.map(project => (
-              <ProjectCard
-                transition:name={`test-${project.test}`}
-                client:only='react'
-                test={project.test}
-                title={project.title}
-                image={project.image}
-                href={project.href}
-              />
-            ))
-          }
-        </section>
-      </div>
+      <Projects client:load />
+      <hr class='bg-transparent h-[16vh] border-none' />
     </div>
     <hr class='bg-transparent h-[8vh] border-none' />
   </main>
   <footer class='min-h-[92vh]' id='about'>about</footer>
 </Body>
-
-<style>
-  #project-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-
-  @media screen and (min-width: 460px) {
-    #project-grid {
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    }
-  }
-</style>
