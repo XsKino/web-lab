@@ -17,8 +17,11 @@ import projects from '@data/projects'
       <RotatingIcon class='h-full w-full flex-4 md:flex-1' />
       <div class='flex-1 p-4 md:p-20 md:pr-0 md:max-w-[50vw]'>
         <div
-          class='flex flex-col gap-2 md:gap-4 text-center md:text-end md:p-10 md:border-r-5 md:border-primary'>
-          <h1 class='font-bold text-2xl md:text-3xl'>Welcome!</h1>
+          class='flex flex-col gap-2 md:gap-4 text-center md:text-end md:p-10 md:border-r-5 md:border-primary relative'>
+          <div class='font-bold text-3xl md:text-5xl self-center md:self-end'>
+            <h1 class='absolute blur animate-pulse select-none'>Welcome!</h1>
+            <h1>Welcome!</h1>
+          </div>
           <p class='text-lg md:2xl'>
             Have fun exploring over {Math.floor((projects.length - 1) / 5) * 5} interesting front-end projects
             made with different technologies!
@@ -33,10 +36,15 @@ import projects from '@data/projects'
   </header>
   <main>
     <NavBar client:load />
-    <div id='tests' class='w-full py-[16vh] bg-background bg-stripe-gradient'>
+    <div id='projects' class='w-full py-[16vh] bg-background bg-stripe-gradient'>
       <Projects client:load />
     </div>
     <hr class='bg-transparent h-[8vh] border-none' />
   </main>
-  <footer class='min-h-[92vh]' id='about'>about</footer>
+  <footer class='min-h-[92vh] p-4 md:p-20 flex flex-col gap-4 md:gap-10' id='about'>
+    <div class='font-bold text-3xl md:text-5xl text-center self-center'>
+      <h1 class='absolute blur animate-pulse select-none'>About</h1>
+      <h1>About</h1>
+    </div>
+  </footer>
 </Body>

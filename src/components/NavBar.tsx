@@ -151,7 +151,7 @@ const Book = ({ className }: { className?: string }): JSX.Element => (
 
 const links: Array<{ id: string; label: string; icon?: JSX.Element }> = [
   { id: 'header', label: 'Home', icon: <Kino /> },
-  { id: 'tests', label: 'Tests', icon: <Flask /> },
+  { id: 'projects', label: 'Projects', icon: <Flask /> },
   { id: 'about', label: 'About', icon: <Book /> }
 ]
 
@@ -168,7 +168,7 @@ export default function NavBar(): JSX.Element {
               radius='full'
               className='backdrop-blur-lg'
               endContent={element.icon}
-              onClick={() => {
+              onPress={() => {
                 const $element = document.getElementById(element.id)
                 $element?.scrollIntoView({ behavior: 'smooth' })
               }}>

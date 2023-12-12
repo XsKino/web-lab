@@ -22,7 +22,7 @@ export default function Projects(): JSX.Element {
 
   return (
     <div className='w-full md:max-w-[90%] m-auto flex flex-col'>
-      <div className='py-6 pb-20 text-5xl md:text-7xl text-center relative self-center flex flex-col items-end'>
+      <div className='py-6 pb-20 font-bold text-3xl md:text-5xl text-center relative self-center flex flex-col items-end'>
         <h1 className='select-none p-4 bg-clip-text text-transparent bg-fixed bg-cover [background-image:var(--gradient)] absolute blur w-full animate-pulse'>
           Projects
         </h1>
