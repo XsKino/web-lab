@@ -3,15 +3,18 @@ import Body from '@layouts/Body.astro'
 import NavBar from '@components/NavBar'
 import Projects from '@components/Projects'
 import RotatingIcon from '@components/RotatingIcon.astro'
+import SocialLinks from '@components/SocialLinks.astro'
 
-import projects from '@data/projects'
+import projects, { getUsedTechnologies } from '@data/projects'
 ---
 
 <Body title="Kino's Web Lab" class='dark flex flex-col [background-image:var(--gradient)] bg-cover bg-fixed'>
   <header id='header' class='h-[85svh] flex flex-col relative overflow-hidden'>
     <div class='md:absolute border-l-3 m-4 border-primary p-2 animate-appearance-in'>
       <h1 class='font-semibold text-lg md:text-2xl'>Kino's Web Lab</h1>
-      <section id='socials md:text-xl'>xd xd xd</section>
+      <section class='md:text-xl flex gap-3'>
+        <SocialLinks />
+      </section>
     </div>
     <div class='flex flex-1 flex-col md:flex-row-reverse items-center'>
       <RotatingIcon class='h-full w-full flex-4 md:flex-1' />
@@ -22,11 +25,11 @@ import projects from '@data/projects'
             <h1 class='absolute blur animate-pulse select-none'>Welcome!</h1>
             <h1>Welcome!</h1>
           </div>
-          <p class='text-lg md:2xl'>
+          <p>
             Have fun exploring over {Math.floor((projects.length - 1) / 5) * 5} interesting front-end projects
             made with different technologies!
           </p>
-          <p class='text-lg md:2xl hidden md:inline'>
+          <p class='hidden md:inline'>
             I intend to make this website a place to showcase some cool capabilities of the web platform, and
             to inspire others to do the same, specially people who are just starting out.
           </p>
@@ -41,10 +44,91 @@ import projects from '@data/projects'
     </div>
     <hr class='bg-transparent h-[8vh] border-none' />
   </main>
-  <footer class='min-h-[92vh] p-4 md:p-20 flex flex-col gap-4 md:gap-10' id='about'>
-    <div class='font-bold text-3xl md:text-5xl text-center self-center'>
+  <footer class='h-[92vh] p-4 md:p-20 md:py-12 flex flex-col gap-4 md:gap-10' id='about'>
+    <div class='font-bold text-3xl md:text-5xl text-center self-center flex flex-col'>
       <h1 class='absolute blur animate-pulse select-none'>About</h1>
       <h1>About</h1>
     </div>
+    <div class='scrollbar gap-8 flex-1 overflow-auto'>
+      <p class='text-sm md:text-lg'>
+        <strong>Hi there!</strong>
+        <br />
+        <br />
+        <strong>Kino's Web Lab</strong> is inspired by the <a
+          target='_blank'
+          rel='noreferrer'
+          href='https://50projects50days.com/'>50 Days 50 Projects</a
+        >
+         Challenge by <a target='_blank' rel='noreferrer' href='https://twitter.com/traversymedia'>
+          Brad Traversy</a
+        >
+         and <a target='_blank' rel='noreferrer' href='https://twitter.com/florinpop1705'>Florin Pop</a>, a
+        challenge where you build 50 unique projects to improve your <strong>front-end skills</strong>.
+        <br />
+        <br />
+         This place is where I'll be showcasing my solutions to the challenge, and maybe some other projects.
+        Using my own website as a playground is a great way to learn new things and experiment with <strong
+          >new technologies</strong
+        >. Here you will find projects made with {getUsedTechnologies().slice(0, -1).join(', ')}
+         and {getUsedTechnologies().at(-1)}.
+        <br />
+        <br />
+         Indeed, this whole website was made using <a
+          target='_blank'
+          rel='noreferrer'
+          href='https://astro.build/'>Astro</a
+        >, a new static site generator that lets you use components from many <strong
+          >JavaScript frameworks</strong
+        >.
+      </p>
+    </div>
+    <div class='flex text-xl justify-evenly md:justify-end md:gap-6'>
+      <SocialLinks />
+    </div>
   </footer>
 </Body>
+
+<style>
+  /* p {
+    font-size: calc(0.5rem + 1vw);
+    line-height: calc(1rem + 1vw);
+  } */
+
+  html,
+  body {
+    @media screen and (min-width: 768px) {
+      font-size: calc(0.5rem + 0.75vw);
+    }
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  p > a {
+    text-decoration: underline;
+    &:hover {
+      text-shadow: 0 0 0.5rem white;
+    }
+  }
+
+  .scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #fff #fff5;
+  }
+
+  .scrollbar::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    background: #fff5;
+    border-radius: 999rem;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: #fffa;
+    border-radius: 999rem;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #fff;
+  }
+</style>

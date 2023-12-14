@@ -324,3 +324,15 @@ const projects: Project[] = [
 ]
 
 export default projects
+
+export const getUsedTechnologies = (): Technology[] => {
+  const technologies: Technology[] = []
+  projects.forEach(project => {
+    project.technologies?.forEach(technology => {
+      if (!technologies.includes(technology)) {
+        technologies.push(technology)
+      }
+    })
+  })
+  return technologies
+}

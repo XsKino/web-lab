@@ -24,7 +24,7 @@ export default function ProjectCard({
               {technologies?.map(tech => (
                 <img
                   src={`/img/technologies/${tech}.png`}
-                  className='h-5 md:h-8 lg:h-10 w-auto'
+                  className='h-[20px] md:h-[32px] lg:h-[40px] w-auto'
                   key={tech}
                   title={tech}
                   alt={tech}
@@ -35,7 +35,7 @@ export default function ProjectCard({
               {technologies?.map(tech => (
                 <img
                   src={`/img/technologies/${tech}.png`}
-                  className='h-5 md:h-8 lg:h-10 w-auto'
+                  className='h-[20px] md:h-[32px] lg:h-[40px] w-auto'
                   key={tech}
                   title={tech}
                   alt={tech}
