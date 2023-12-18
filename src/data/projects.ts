@@ -86,13 +86,13 @@ const projects: Project[] = [
     image: '/img/test/11/thumbnail.jpg',
     href: '/test/11',
     technologies: ['React', 'Tailwind']
+  },
+  {
+    test: 12,
+    title: 'FAQ Collapse',
+    image: '/img/test/12/thumbnail.jpg',
+    href: '/test/12'
   }
-  // {
-  //   test: 12,
-  //   title: 'FAQ Collapse',
-  //   image: '/img/test/12/thumbnail.jpg',
-  //   href: '/test/12'
-  // },
   // {
   //   test: 13,
   //   title: 'Random Choice Picker',

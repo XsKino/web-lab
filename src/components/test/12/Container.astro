@@ -1,0 +1,50 @@
+---
+import { Icon } from 'astro-icon'
+
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<container
+  id='container'
+  class='transition-all flex flex-col p-4 border-2 rounded-lg cursor-pointer bg-foreground/10 border-foreground/10 hover:bg-foreground/20'>
+  <div class='flex justify-between gap-4 text-md md:text-xl'>
+    <h2 class='ml-4 flex-1'>{title}</h2>
+    <div class='w-[2em] md:w-[1.4em] grid place-content-center'>
+      <Icon class='chevron w-full h-auto' name='ic:round-chevron-left' />
+    </div>
+  </div>
+  <div class='content'>
+    <p class='pt-4 text-sm md:text-lg'>
+      <slot />
+    </p>
+  </div>
+</container>
+
+<style>
+  .content {
+    height: 0;
+    overflow: hidden;
+  }
+
+  .active {
+    background-color: white;
+    color: black;
+  }
+
+  .active > .content {
+    height: fit-content;
+  }
+
+  .chevron {
+    transition: transform 0.3s ease;
+    transform: rotate(-90deg);
+  }
+
+  .active .chevron {
+    transform: rotate(90deg);
+  }
+</style>
