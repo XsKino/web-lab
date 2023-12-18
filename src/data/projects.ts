@@ -91,7 +91,8 @@ const projects: Project[] = [
     test: 12,
     title: 'FAQ Collapse',
     image: '/img/test/12/thumbnail.jpg',
-    href: '/test/12'
+    href: '/test/12',
+    technologies: ['Astro', 'Tailwind']
   }
   // {
   //   test: 13,
