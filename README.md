@@ -13,10 +13,10 @@ Feel free to explore the various projects within this repository. From interacti
 ## Project Highlights
 Here are a few standout projects that showcase the range of skills developed during this challenge:
 
-- [Project 2: Progress steps](./src/pages/test/2) - Here I took on the challenge of working with svg, combining it with React's user interactivity to make a very creative progress steps indicator.
+- [Project 2: Progress steps](./src/pages/test/2) - Here I took on the challenge of working with svg paths, combining it with React's user interactivity to make a very creative progress steps indicator.
 
-## Cket it out online
-You can experience these projects live on [Kino's Web Lab](https://xs-web-lab.vercel.app). No need to clone the repository; just visit the website and explore the creativity!
+## Check it out online
+You can experience these projects live on [Kino's Web Lab](https://xs-web-lab.vercel.app). No need to clone the repository, just visit the website and explore the creativity!
 
 ## Contribution
 If you have ideas, suggestions, or improvements for any project, feel free to submit a pull request. Contributions are always welcome!
