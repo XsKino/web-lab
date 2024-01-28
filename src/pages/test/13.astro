@@ -1,0 +1,22 @@
+---
+import RandomChoicePicker from '@components/test/13/RandomChoicePicker.vue'
+import Body from '@layouts/Body.astro'
+---
+
+<Body class='bg-neutral-950' title='Random Choice Picker'>
+  <div
+    class='absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]'>
+  </div>
+  <main
+    class='min-h-screen w-full max-w-screen-md flex flex-col justify-evenly items-center gap-10 p-6 md:p-10 m-auto'>
+    <h1
+      class='text-lg sm:text-xl md:text-3xl font-["Manrope"] font-semibold [letter-spacing:0.2em] text-white/70 relative'>
+      Random choice picker
+      <span
+        class='block select-none -scale-y-100 bg-clip-text text-transparent bg-gradient-to-t from-white/20 to-75% to-transparent'
+        >Random choice picker</span
+      >
+    </h1>
+    <RandomChoicePicker client:load />
+  </main>
+</Body>

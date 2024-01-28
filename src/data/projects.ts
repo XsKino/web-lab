@@ -93,13 +93,14 @@ const projects: Project[] = [
     image: '/img/test/12/thumbnail.jpg',
     href: '/test/12',
     technologies: ['Astro', 'Tailwind']
+  },
+  {
+    test: 13,
+    title: 'Random Choice Picker',
+    image: '/img/test/13/thumbnail.jpg',
+    href: '/test/13',
+    technologies: ['Vue', 'Tailwind']
   }
-  // {
-  //   test: 13,
-  //   title: 'Random Choice Picker',
-  //   image: '/img/test/13/thumbnail.jpg',
-  //   href: '/test/13'
-  // },
   // {
   //   test: 14,
   //   title: 'Animated Navigation',

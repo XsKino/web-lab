@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '@styles/components/NavBar.module.css'
-import { Button } from '@nextui-org/button'
+import { Button } from '@nextui-org/react'
 
 const Kino = ({ className }: { className?: string }): JSX.Element => (
   <svg

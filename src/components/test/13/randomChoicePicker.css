@@ -1,0 +1,15 @@
+.tag-active {
+  background-color: #fff3;
+  color: white;
+}
+
+.tag-selected > .tag-bg {
+  background: conic-gradient(#ffffff2b, #fff1, #fffe, #fff1, #ffffff2b);
+  animation-duration: 1.5s;
+  translate: 0 -1.5em;
+}
+
+.tag-selected > div {
+  background-color: #0a0a0add;
+  color: white;
+}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ProjectCard from '@components/ProjectCard'
 import projects from '@data/projects'
-import { Switch } from '@nextui-org/switch'
+import { Switch } from '@nextui-org/react'
 
 const InfoIcon = ({ active }: { active: boolean }): JSX.Element => (
   <svg
