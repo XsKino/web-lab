@@ -19,7 +19,7 @@
     "@nextui-org/react": "^2.2.9",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
-    "astro": "^3.5.5",
+    "astro": "^3.6.5",
     "astro-icon": "^0.8.1",
     "atropos": "^2.0.2",
     "axios": "^1.6.2",

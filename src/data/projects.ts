@@ -100,13 +100,13 @@ const projects: Project[] = [
     image: '/img/test/13/thumbnail.jpg',
     href: '/test/13',
     technologies: ['Vue', 'Tailwind']
-  },
-  {
-    test: 14,
-    title: 'Animated Navigation',
-    image: '/img/test/14/thumbnail.jpg',
-    href: '/test/14'
   }
+  // {
+  //   test: 14,
+  //   title: 'Animated Navigation',
+  //   image: '/img/test/14/thumbnail.jpg',
+  //   href: '/test/14'
+  // }
   // {
   //   test: 15,
   //   title: 'Incrementing Counter',
